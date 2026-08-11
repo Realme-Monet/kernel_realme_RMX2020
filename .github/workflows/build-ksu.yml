@@ -2,9 +2,6 @@ name: Build KernelSU
 
 on:
   workflow_dispatch: # Allows manual trigger from the Actions tab
-  push:
-    branches:
-      - master # Automatically builds on push to this branch
 
 jobs:
   build:
