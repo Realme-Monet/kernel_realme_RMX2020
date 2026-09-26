@@ -1,7 +1,7 @@
 name: Build KernelSU
 
 on:
-  workflow_dispatch: # Allows manual trigger from the Actions tab
+  workflow_dispatch:
 
 jobs:
   build:
@@ -35,7 +35,7 @@ jobs:
 
       - name: Setup KernelSU
         run: |
-          curl -LSs "https://raw.githubusercontent.com/doubledashdot/KernelSU/refs/heads/master/kernel/setup.sh" | bash -s master
+          curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/refs/heads/dev/kernel/setup.sh" | bash -s dev
 
       - name: Build Kernel
         run: |
@@ -48,4 +48,4 @@ jobs:
         with:
           name: KernelSU-Build-Artifacts
           path: AnyKernel/*.zip
-          retention-days: 7
+          retention-days: 1
