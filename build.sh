@@ -6,8 +6,8 @@ rm -rf AnyKernel
 source ~/.bashrc && source ~/.profile
 export LC_ALL=C && export USE_CCACHE=1
 export ARCH=arm64
-export KBUILD_BUILD_HOST=noname
-export KBUILD_BUILD_USER="dp02xd"
+export KBUILD_BUILD_HOST=GITHUB
+export KBUILD_BUILD_USER="DP00XD"
 if [ ! -d "clang" ]; then
     wget "https://gitlab.com/clangsantoni/aosp_clang/-/archive/clang-r510928/aosp_clang-clang-r510928.tar.gz?ref_type=heads" -O "aosp-clang.tar.gz"
     mkdir clang && tar -xf aosp-clang.tar.gz -C clang --strip-components=1 && rm -rf aosp-clang.tar.gz
@@ -33,11 +33,11 @@ zipping() {
         return 1
     fi
 
-    git clone --depth=1 https://github.com/monet-trees/AnyKernel3.git AnyKernel || return 1
+    git clone --depth=1 https://github.com/Realme-Monet/AnyKernel3.git AnyKernel || return 1
     cp "$IMAGE" AnyKernel || return 1
 
     DATE=$(date +"%Y%m%d-%H%M")
-    ZIP_NAME="NoName-${DATE}-OSS-MONET.zip"
+    ZIP_NAME="AETHER-${DATE}-OSS-MONET.zip"
 
     (
         cd AnyKernel || exit 1
